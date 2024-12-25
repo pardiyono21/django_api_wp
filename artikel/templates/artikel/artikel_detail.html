@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %} {{article.title.rendered}}{% endblock %}
+{% block description %} {{description}}{% endblock %}
+{% block content %}
+{% load static %}
+    
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Artikel utama -->
+            <div class="col-lg-9">
+                <div class="article">
+                    <h1>{{ article.title.rendered }}</h1>
+                    {{ article.schema}}
+                    <img src="{{ article.yoast_head_json.og_image.0.url }}" class="card-img" alt="...">
+                    {{ article.content.rendered|safe }}
+                </div>
+                <br>
+                <br>
+                <script id="dsq-count-scr" src="//inspektorat-bungokab-go-id.disqus.com/count.js" async></script>
+                <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://inspektorat-bungokab-go-id.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+            </div>
+    
+            <!-- Sidebar sticky -->
+            {% comment %} <div class="col-lg-4">
+                <div class="sidebar position-sticky" style="top: 116px;">
+                    <h5>Sidebar</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Artikel Terkait 1</a></li>
+                        <li><a href="#">Artikel Terkait 2</a></li>
+                        <li><a href="#">Artikel Terkait 3</a></li>
+                        <li><a href="#">Artikel Terkait 4</a></li>
+                    </ul>
+                </div>
+            </div> {% endcomment %}
+        </div>
+    </div>
+
+{% endblock %}
+
+

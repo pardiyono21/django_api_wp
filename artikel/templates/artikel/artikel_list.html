@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} Artikel | Devendlin{% endblock %}
+{% block description %} {{description}}{% endblock %}
+{% block content %}
+{% load static %}
+<section id="subscribe" class="artikel" style="padding-top: 100px;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title fw-bold">Artikel <span class="text-warning">Terbaru</span></h2>
+            <form action="https://api.follow.it/subscription-form/M0NKQnNLN3V4UXNYVURiM3RhY05FNngzdUI5ZEpBRXlocmpmUGxabzNQdXI2UG5jS3JJQlZUQ3dSZUlrUXZETUJ6UWtQN3ZXcE9teUVBWEhKejhER2RVK2dJRThmMDkranJFREF4RmVySm5QNUMwZUViMG5rQWFOb1ltcVg1b2d8ODJjMnhpVDcvb2xXYndNa1pjNWtYaXJaQ0xudHQzbEF0SnlxZnFxdVRzUT0=/8" method="post">
+                <br>
+                <p>Dapatkan info artikel terbaru langsung ke email kamu.</p>
+                <div class="col-3 d-flex flex-column flex-sm-row mx-auto gap-2">
+                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                    <input id="newsletter1" type="email" name="email" class="form-control" placeholder="Email address" required="">
+                    <button class="btn btn-danger" type="submit">Subscribe</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="row">
+            {% for article in articles %} 
+            <div class="col-lg-3 col-md-4">
+                <a href="{% url 'article_detail' article.slug %}">
+                <div class="card mb-3">
+                    <img src="{{ article.yoast_head_json.og_image.0.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        
+                        <h5 class="card-title">{{ article.title.rendered }}</h5>
+                        <p class="card-text">
+                            <small class="text-muted">{{ article.formatted_date }}</small>
+                        </p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+   
+{% endblock %}

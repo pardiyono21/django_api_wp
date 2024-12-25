@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+}
+section{
+    min-height: 100vh;
+}
+.welcome-home{
+    height: 100vh;
+    --bd-pink-rgb: 214, 51, 132;
+    padding: 5rem 0;
+    background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%), radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%), radial-gradient(ellipse at top right, rgba(var(--bs-accent-rgb), 0.5), transparent 50%), radial-gradient(ellipse at center right, rgba(var(--bs-violet-rgb), 0.5), transparent 50%), radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
+}
+.masthead-notice {
+    background-color: #f0cb5b;
+    box-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
+}
+
+/* Style untuk nav-scroller agar bisa digulir horizontal */
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+    margin: 0 auto;
+}
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -4px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+#scrollableNav .nav-link {
+    font-size: 100%;
+    color: #fff;
+    margin: 8px 15px;
+    padding: 0;
+}
+span.tags-head {
+    border: 1px solid #494c4c;
+    padding: 2px 10px;
+    border-radius: 17px;
+    font-size: 90%;
+}
+.artikel .card h5, .artikel .card p, .artikel .card small.text-muted{
+    font-size: 95%;
+}
+.artikel a{
+    text-decoration: none;
+}
+.artikel .card img.card-img-top {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+}
+#typed-h1, #typed-p {
+    display: inline; /* Pastikan elemen tidak menjadi blok */
+    vertical-align: baseline; /* Kursor akan sejajar dengan teks */
+    line-height: normal; /* Sesuaikan tinggi baris */
+}
+
+/* Gaya kursor animasi */
+.typed-cursor {
+    vertical-align: baseline; /* Sejajarkan dengan teks */
+    line-height: 1;
+    font-weight: 600;
+    font-size: 80%;
+}
+.bd-navbar .dropdown-menu .active {
+font-weight: 600;
+}
+.bd-navbar .dropdown-menu .dropdown-item {
+    border-radius: .25rem;
+}
+.dropdown-item.active, .dropdown-item:active {
+    color: #30333c;
+    text-decoration: none;
+    background-color: rgb(240 203 91);
+    box-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
+}
+.bd-navbar .dropdown-menu li+li {
+    margin-top: .125rem;
+}

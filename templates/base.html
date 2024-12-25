@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            {{title}}
+        {% endblock %}
+    </title>
+    <!-- Favicon untuk desktop -->
+    <link rel="icon" href="{% static 'images/favicon-32x32.png'%}" type="image/png" sizes="32x32">
+    <link rel="icon" href="{% static 'images/favicon-16x16.png'%}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon">
+
+    <!-- Ikon untuk perangkat Apple -->
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png'%}">
+
+    <!-- Ikon untuk Android -->
+    <link rel="icon" href="{% static 'images/android-chrome-192x192.png'%}" type="image/png" sizes="192x192">
+    <link rel="icon" href="{% static 'images/android-chrome-512x512.png'%}" type="image/png" sizes="512x512">
+
+    <!-- Jika menggunakan PWA -->
+    <link rel="manifest" href="{% static 'assets/manifest.json'%}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        .navbar .navbar-toggler {
+            padding: 0;
+            margin-right: -.5rem;
+            border: 0;
+        }
+        .navbar .navbar-toggler .bi {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .navbar .navbar-toggler, .bd-navbar .nav-link {
+            padding-right: .25rem;
+            padding-left: .25rem;
+        }
+        .navbar-toggler:focus {
+            text-decoration: none;
+            outline: 0;
+            box-shadow: none;
+        }
+        .bd-navbar {
+            padding: .75rem 0;
+            background-color: transparent;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+        }
+        .DocSearch-Button .DocSearch-Search-Icon {
+            color:rgba(30, 30, 30, 0.85);
+        }
+
+        /*Sticy tags menu*/
+        .scroll-menu {
+            background: #31343d;
+            position: fixed; /* Tetap di atas layar */
+            top: 68px;
+            left: 0;
+            right: 0;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            
+            transform: translateY(0); /* Awalnya terlihat */
+            transition: transform 0.3s ease; /* Transisi animasi */
+            z-index: 1000;
+        }
+        
+        .scroll-menu.hidden {
+            transform: translateY(-100%); /* Geser ke atas sehingga tersembunyi */
+        }
+    </style>
+</head>
+<body>
+    {% include "partials/navbar.html" %}
+
+    {% block content %}
+
+    {% endblock %}
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Devendlin. All rights reserved.</p>
+    </footer>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

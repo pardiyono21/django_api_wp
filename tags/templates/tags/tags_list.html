@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %} {{title}}{% endblock %}
+{% block description %} {{description}}{% endblock %}
+{% block content %}
+{% load static %}
+<section id="subscribe" class="artikel" style="padding-top: 100px;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title fw-bold">Artikel <span class="text-warning">Terbaru</span></h2>
+            <form action="https://api.follow.it/subscription-form/M0NKQnNLN3V4UXNYVURiM3RhY05FNngzdUI5ZEpBRXlocmpmUGxabzNQdXI2UG5jS3JJQlZUQ3dSZUlrUXZETUJ6UWtQN3ZXcE9teUVBWEhKejhER2RVK2dJRThmMDkranJFREF4RmVySm5QNUMwZUViMG5rQWFOb1ltcVg1b2d8ODJjMnhpVDcvb2xXYndNa1pjNWtYaXJaQ0xudHQzbEF0SnlxZnFxdVRzUT0=/8" method="post">
+                <br>
+                <p>Dapatkan info artikel terbaru langsung ke email kamu.</p>
+                <div class="col-3 d-flex flex-column flex-sm-row mx-auto gap-2">
+                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                    <input id="newsletter1" type="email" name="email" class="form-control" placeholder="Email address" required="">
+                    <button class="btn btn-danger" type="submit">Subscribe</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="row">
+            <h1>Articles for Tag: {{ slug }}</h1>
+            {% if posts %}
+                <ul>
+                {% for post in posts %}
+                    <li>
+                        <a href="{{ post.link }}">{{ post.title.rendered }}</a>
+                        <p>{{ post.excerpt.rendered|safe }}</p>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No articles found for this tag.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+   
+{% endblock %}
