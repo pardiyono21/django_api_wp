@@ -1,9 +1,14 @@
 import requests
 from django.shortcuts import render
+from django.views.decorators.cache import cache_page
 
+# Gunakan cache_page untuk menyimpan hasil render halaman selama 15 menit
+@cache_page(60 * 15)  # Cache selama 15 menit
 def tag_list(request):
     return render(request, 'tags/tags_list.html')
 
+# Gunakan cache_page untuk menyimpan hasil render halaman selama 15 menit
+@cache_page(60 * 15)  # Cache selama 15 menit
 def tag_articles(request, slug):
     # URL API WordPress untuk mendapatkan tag ID berdasarkan slug
     tag_url = f"https://appscenter.site/wp-json/wp/v2/tags?slug={slug}"

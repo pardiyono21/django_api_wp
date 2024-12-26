@@ -1,7 +1,11 @@
+from django.views.decorators.cache import cache_page
 from datetime import datetime
 from django.shortcuts import render
 from django.http import JsonResponse
 import requests
+
+# Gunakan cache_page untuk menyimpan hasil render halaman selama 15 menit
+#@cache_page(60 * 15)  # Cache selama 15 menit
 def index(request):
     # API URL untuk kategori 70
     wordpress_api_url_70 = "https://appscenter.site/wp-json/wp/v2/posts?categories=70&per_page=4"
@@ -46,6 +50,8 @@ def index(request):
     return render(request, 'home.html', context)
     #return render(request,"home.html", context)
 
+# Gunakan cache_page untuk menyimpan hasil render halaman selama 15 menit
+@cache_page(60 * 15)  # Cache selama 15 menit
 def fetch_wordpress_data(request):
     wordpress_api_url = "https://appscenter.site/wp-json/wp/v2/posts?categories=70&per_page=4"
     

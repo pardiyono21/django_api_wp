@@ -11,6 +11,9 @@ section{
     padding: 5rem 0;
     background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%), radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%), radial-gradient(ellipse at top right, rgba(var(--bs-accent-rgb), 0.5), transparent 50%), radial-gradient(ellipse at center right, rgba(var(--bs-violet-rgb), 0.5), transparent 50%), radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
 }
+.header-artikel{
+    background-image: linear-gradient(1deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%), radial-gradient(ellipse at top left, rgb(13 110 253), #ffffff00 50%), radial-gradient(ellipse at top right, rgb(255 199 0), #ffffff33 60%), radial-gradient(ellipse at center right, rgb(86 0 255 / 0%), transparent 0%), radial-gradient(ellipse at bottom left, rgb(182 0 246 / 22%), transparent 50%);
+}
 .masthead-notice {
     background-color: #f0cb5b;
     box-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);

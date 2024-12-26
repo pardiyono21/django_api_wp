@@ -3,16 +3,35 @@
 {% block description %} {{description}}{% endblock %}
 {% block content %}
 {% load static %}
-    
-    
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+
+<header class="py-5 px-lg-5 px-sm-3  mb-5 border-bottom header-artikel">
+    <div class="container-xxl bd-gutter">
+        <div class="row align-items-center">
+          <div class="col-lg-6 pt-5">
+            {% for tag in tags_with_classes %}
+                <span class="badge {{ tag.class }} rounded-1 me-1 mb-1">{{ tag.name }}</span>
+            {% endfor %}
+            <h2 class="section-title fw-bold">{{ article.title.rendered|safe }}</h2>
+            <span class="badge p-1 pe-2 text-dark masthead-notice rounded-pill">
+                <img class="lazyload rounded-circle me-1" width="24" height="24" data-src="{% static 'images/profil.jpeg' %}" alt="Pardiyono" loading="lazy">
+                Pardiyono
+            </span>
+          </div>
+          <div class="col-lg-6 pt-5">
+            <img style="height: 340px;object-fit: cover;" data-src="{{ article.yoast_head_json.og_image.0.url }}" class="lazyload card-img rounded" alt="..." loading="lazy">
+          </div>
+          
+        </div>
+      </div>
+</header>
+<section>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <!-- Artikel utama -->
-            <div class="col-lg-9">
+            <div class="col-lg-8">
                 <div class="article">
-                    <h1>{{ article.title.rendered }}</h1>
                     {{ article.schema}}
-                    <img src="{{ article.yoast_head_json.og_image.0.url }}" class="card-img" alt="...">
                     {{ article.content.rendered|safe }}
                 </div>
                 <br>
@@ -39,20 +58,36 @@
             </div>
     
             <!-- Sidebar sticky -->
-            {% comment %} <div class="col-lg-4">
+            <div class="col-lg-4">
                 <div class="sidebar position-sticky" style="top: 116px;">
-                    <h5>Sidebar</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Artikel Terkait 1</a></li>
-                        <li><a href="#">Artikel Terkait 2</a></li>
-                        <li><a href="#">Artikel Terkait 3</a></li>
-                        <li><a href="#">Artikel Terkait 4</a></li>
-                    </ul>
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-4">
+                                    <div class="text-center">
+                                        <img src="{% static 'images/profil.jpeg' %}"
+                                    alt="Generic placeholder image" class="img-fluid mx-auto"
+                                    style="width: 150px; border-radius: 10px;" />
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-12 col-sm-8">
+                                    <h5 class="mb-1 text-center">Pardiyono</h5>
+                                    <p class="mb-2 pb-1 text-center">
+                                        Full-Stack Developer
+                                    </p>
+                                    <div class="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
+                                        <span class="fs-6 fst-italic">"Pemrograman adalah keterampilan yang lebih bergantung pada cara berpikir dari pada alat atau bahasa"</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> {% endcomment %}
+            </div>
         </div>
     </div>
-
+</section>
 {% endblock %}
 
 

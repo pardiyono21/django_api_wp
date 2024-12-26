@@ -22,12 +22,18 @@
                 
                 
                 <h1 class="mb-3 fw-semibold lh-1"><span id="typed-h1"></span></h1>
-                <p class="lead mb-3" style="min-height:120px"><span id="typed-p"></span></p>
-                
+                <p class="lead mb-3 d-none d-sm-block" style="min-height:120px"><span id="typed-p"></span></p>
+
+                <button style="display:none" id="installPWAButton" class="justify-content-center btn btn-sm bg-success-subtle align-items-center fw-semibold justify-content-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google-play" viewBox="0 0 16 16">
+                        <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+                    </svg>
+                     Install Apps
+                </button>
                 
                 
             </div>
-            <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="row d-flex justify-content-center mt-4 align-items-center h-100">
                 <div class="col-md-6">
                 <div class="card" style="border-radius: 15px;">
                     <div class="card-body p-4">
@@ -78,7 +84,7 @@
                     <a href="{% url 'article_detail' post.slug %}">
                     <div class="card mb-3">
                         <img src="{{ post.yoast_head_json.og_image.0.url }}" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <div class="card-body bg-body-tertiary">
                           <h5 class="card-title">{{ post.title.rendered }}</h5>
                           {% comment %} <p class="card-text">{{ post.excerpt.rendered|safe }}</p> {% endcomment %}
                           <p class="card-text"><small class="text-muted">{{ post.formatted_date }}</small></p>
@@ -102,7 +108,7 @@
             <div class="row g-5">
                 {% for post in posts_69 %} 
                 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-lg-3 col-md-4">
                 <a class="text-decoration-none" href="{% url 'project_detail' post.slug %}">
                     <img class="img-fluid rounded" src="{{ post.yoast_head_json.og_image.0.url }}" alt="">
                     <div class="mt-4">

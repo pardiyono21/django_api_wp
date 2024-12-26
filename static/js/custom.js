@@ -56,3 +56,29 @@ themeButtons.forEach(button => {
     setTheme(selectedTheme);
   });
 });
+
+//PWA
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Simpan event untuk digunakan nanti
+    e.preventDefault();
+    deferredPrompt = e;
+    // Tampilkan tombol install
+    const installButton = document.getElementById('installPWA');
+    installButton.style.display = 'inline';
+
+    installButton.addEventListener('click', async () => {
+        // Tampilkan prompt instalasi
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const choiceResult = await deferredPrompt.userChoice;
+            if (choiceResult.outcome === 'accepted') {
+                console.log('PWA installation accepted');
+            } else {
+                console.log('PWA installation dismissed');
+            }
+            deferredPrompt = null; // Reset prompt
+        }
+    });
+});
