@@ -8,12 +8,6 @@ The project is structured to make use of both WordPress and Django, where WordPr
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
 4. [Installation](#installation)
-5. [Setup](#setup)
-6. [Configuration](#configuration)
-7. [Usage](#usage)
-8. [Testing](#testing)
-9. [Contributing](#contributing)
-10. [License](#license)
 
 ## Features
 
@@ -31,7 +25,7 @@ The project is structured to make use of both WordPress and Django, where WordPr
 - **Nginx**: Web server (if deploying on production).
 - **Certbot**: For SSL certificate management.
 
-## Clone the Repository
+## Installation
 
 Clone this repository to your local machine using Git:
 ```bash
