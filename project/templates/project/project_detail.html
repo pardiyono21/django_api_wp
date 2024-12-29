@@ -28,6 +28,19 @@
 <section>
     <div class="container mt-5">
         <div class="row justify-content-center">
+            <!-- Sidebar sticky -->
+            <div class="col-lg-4">
+                <div class="sidebar position-sticky" style="top: 116px;">
+                    
+                    <div class="p-3 mb-3 bg-body-tertiary rounded text-center">
+                        <img class="p-0 bd-placeholder-img card-img-top rounded mb-3" src="{{ project.yoast_head_json.og_image.0.url }}" alt="..." loading="lazy">
+                        <span class="fw-bold h4">Rp 0</span>
+                        <del class="fs-6">Rp 800.000</del>
+                        <span>/ tahun</span>
+                        <button type="button" class="btn btn-primary my-4 col-11 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">🔑 Dapatkan Akses</button></div>
+
+                </div>
+            </div>
             <!-- Artikel utama -->
             <div class="col-lg-8">
                 <div class="project">
@@ -57,19 +70,7 @@
                     </script>
             </div>
     
-            <!-- Sidebar sticky -->
-            <div class="col-lg-4">
-                <div class="sidebar position-sticky" style="top: 116px;">
-                    
-                    <div class="p-3 mb-3 bg-body-tertiary rounded text-center">
-                        <img class="p-0 bd-placeholder-img card-img-top rounded mb-3" src="{{ project.yoast_head_json.og_image.0.url }}" alt="..." loading="lazy">
-                        <span class="fw-bold h4">Rp 0</span>
-                        <del class="fs-6">Rp 800.000</del>
-                        <span>/ tahun</span>
-                        <button type="button" class="btn btn-primary my-4 col-11 fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">🔑 Dapatkan Akses</button></div>
-
-                </div>
-            </div>
+            
 
         </div>
     </div>
