@@ -31,17 +31,21 @@ Clone this repository to your local machine using Git:
 ```bash
 git clone https://github.com/pardiyono21/django_api_wp.git
 cd django_api_wp
+```
 
 ## Installation
 Create a new Python virtual environment to manage dependencies:
 ```bash
 py -m venv env
 source env/bin/activate
+```
 
 Install all necessary dependencies by running:
 ```bash
 pip install -r requirements.txt
+```
 
 Start the Django development server:
 ```bash
 py manage.py runserver
+```
