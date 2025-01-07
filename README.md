@@ -35,7 +35,7 @@ cd django_api_wp
 ## Installation
 Create a new Python virtual environment to manage dependencies:
 ```bash
-python3 -m venv env
+py -m venv env
 source env/bin/activate
 
 Install all necessary dependencies by running:
@@ -44,4 +44,4 @@ pip install -r requirements.txt
 
 Start the Django development server:
 ```bash
-python manage.py runserver
+py manage.py runserver
