@@ -2,7 +2,7 @@ import requests
 
 def get_articles():
     # Ganti URL ini dengan URL API WordPress Anda
-    api_url = "https://appscenter.site/wp-json/wp/v2/posts?categories=70"
+    api_url = "https://pardi.jambishow.com/wp-json/wp/v2/posts?categories=70"
     response = requests.get(api_url)
     if response.status_code == 200:
         return response.json()  # Mengembalikan data JSON artikel
@@ -10,7 +10,7 @@ def get_articles():
 
 def get_article_detail(slug):
     # Ganti URL ini dengan URL API WordPress Anda
-    api_url = f"https://appscenter.site/wp-json/wp/v2/posts?slug={slug}"
+    api_url = f"https://pardi.jambishow.com/wp-json/wp/v2/posts?slug={slug}"
     response = requests.get(api_url)
     if response.status_code == 200:
         article = response.json()[0] if response.json() else None
@@ -21,7 +21,7 @@ def get_article_detail(slug):
 
             # Ambil detail tag berdasarkan ID tag
             for tag_id in tag_ids:
-                tag_response = requests.get(f"https://appscenter.site/wp-json/wp/v2/tags/{tag_id}")
+                tag_response = requests.get(f"https://pardi.jambishow.com/wp-json/wp/v2/tags/{tag_id}")
                 if tag_response.status_code == 200:
                     tags.append(tag_response.json())
 

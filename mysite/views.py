@@ -8,9 +8,9 @@ import requests
 #@cache_page(60 * 15)  # Cache selama 15 menit
 def index(request):
     # API URL untuk kategori 70
-    wordpress_api_url_70 = "https://appscenter.site/wp-json/wp/v2/posts?categories=70&per_page=4"
+    wordpress_api_url_70 = "https://pardi.jambishow.com/wp-json/wp/v2/posts?categories=70&per_page=4"
     # API URL untuk kategori 69
-    wordpress_api_url_69 = "https://appscenter.site/wp-json/wp/v2/posts?categories=69&per_page=4"
+    wordpress_api_url_69 = "https://pardi.jambishow.com/wp-json/wp/v2/posts?categories=69&per_page=4"
 
     # Mengambil data dari API kategori 70
     response_70 = requests.get(wordpress_api_url_70)
@@ -53,7 +53,7 @@ def index(request):
 # Gunakan cache_page untuk menyimpan hasil render halaman selama 15 menit
 @cache_page(60 * 15)  # Cache selama 15 menit
 def fetch_wordpress_data(request):
-    wordpress_api_url = "https://appscenter.site/wp-json/wp/v2/posts?categories=70&per_page=4"
+    wordpress_api_url = "https://pardi.jambishow.com/wp-json/wp/v2/posts?categories=70&per_page=4"
     
     # Mengambil data menggunakan requests
     response = requests.get(wordpress_api_url)
